@@ -201,8 +201,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 87263a6a284625d4f99b827028ecb661, type: 2}
+  m_sharedMaterial: {fileID: -7778689469248651937, guid: 87263a6a284625d4f99b827028ecb661, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -335,8 +335,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Held
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 87263a6a284625d4f99b827028ecb661, type: 2}
+  m_sharedMaterial: {fileID: -7778689469248651937, guid: 87263a6a284625d4f99b827028ecb661, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -497,4 +497,5 @@ MonoBehaviour:
   enseigneText: {fileID: 7509102525630846706}
   heldText: {fileID: 1037124949416784093}
   cardBackg: {fileID: 8702278107437413090}
+  targetPosition: {fileID: 0}
   isHeld: 0

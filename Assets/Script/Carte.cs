@@ -37,11 +37,17 @@ public class Carte : MonoBehaviour, IPointerDownHandler
     [SerializeField] private TMP_Text enseigneText;
     [SerializeField] private TMP_Text heldText;
     [SerializeField] private Image cardBackg;
+    [SerializeField] private GameObject targetPosition;
     public bool isHeld;
 
     private void Awake()
     {
         heldText.enabled = false;
+    }
+
+    private void Update()
+    {
+        transform.position = Vector3.Lerp(transform.position, targetPosition.transform.position, 2f * Time.deltaTime);
     }
 
     internal void SetData(CarteData carteData)
