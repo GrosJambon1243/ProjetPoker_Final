@@ -1,0 +1,9 @@
+
+xcsharpsquid:S1210"\When implementing IComparable<T>, you should also override Equals, ==, !=, <, <=, >, and >=.(¬ÍŠ~
+Icsharpsquid:S3903	"'Move 'Enseigne' into a named namespace.(ğÄüøüÿÿÿÿ
+Dcsharpsquid:S3903"(Move 'CarteData' into a named namespace.(¬ÍŠ~
+Fcsharpsquid:S3903!"$Move 'Carte' into a named namespace.(à‚€½ûÿÿÿÿ
+Acsharpsquid:S2933+"Make 'delay' 'readonly'.(îÓ¤˜úÿÿÿÿ8àãˆ…ì1
+`csharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(áşÃ-
+`csharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¦™X
+acsharpsquid:S1104*"DMake this field 'private' and encapsulate it in a 'public' property.(ÿÄüı

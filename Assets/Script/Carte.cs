@@ -38,16 +38,25 @@ public class Carte : MonoBehaviour, IPointerDownHandler
     [SerializeField] private TMP_Text heldText;
     [SerializeField] private Image cardBackg;
     [SerializeField] private GameObject targetPosition;
+    [SerializeField] private AudioSource clicking;
     public bool isHeld;
+    private float delay = 2;
+    private float timer;
 
     private void Awake()
     {
+        
         heldText.enabled = false;
     }
 
     private void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, targetPosition.transform.position, 2f * Time.deltaTime);
+        timer += Time.deltaTime;
+        if (timer>= delay)
+        {
+            transform.position = Vector3.Lerp(transform.position, targetPosition.transform.position, 3f * Time.deltaTime);
+        }
+        
     }
 
     internal void SetData(CarteData carteData)
@@ -97,17 +106,10 @@ public class Carte : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        clicking.Play();
         isHeld = !isHeld;
         heldText.enabled = isHeld;
-        if (isHeld)
-        {
-            cardBackg.color = Color.gray;
-        }
-        else
-        {
-            cardBackg.color = Color.white;
-            
-        }
+        cardBackg.color = isHeld ? Color.gray : Color.white;
         
     }
 
