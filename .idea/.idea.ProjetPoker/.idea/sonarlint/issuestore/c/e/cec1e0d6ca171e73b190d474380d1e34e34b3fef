@@ -1,0 +1,7 @@
+
+bcsharpsquid:S3442&"9Change the visibility of this constructor to 'protected'.(ı«Î•üÿÿÿÿ8­ğ“òì1
+Mcsharpsquid:S3903")Move 'RoundState' into a named namespace.(äŒı8ğàæñì1
+Vcsharpsquid:S3903""-Move 'RoundStateBase' into a named namespace.(ÈÑêÒşÿÿÿÿ8«®Œòì1
+Scsharpsquid:S3903"/Move 'GameStateManager' into a named namespace.(éˆÇ8±¢æñì1
+¢csharpsquid:S1186"yAdd a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.(é¼”²şÿÿÿÿ8ù¬óñì1
+gcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ãÎö78ä°ïñì1
