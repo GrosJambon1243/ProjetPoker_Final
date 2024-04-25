@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,9 +15,23 @@ public enum RoundState
 }
 public class GameStateManager : MonoBehaviour
 {
+    //Opponent Hand and Sprite
+    [SerializeField] public OpponentScript opponentHands;
+    
+    //Button and Text
     [SerializeField] public Button drawButton;
+    [SerializeField] private TMP_Text roundNumber;
+    private int numberOfRound = 1;
+    
+    //Other
     public RoundStateBase currentState;
     public RoundStateBase[] allState = new RoundStateBase[5];
+    private int combatNumber = 1;
+    public int CombatNumber
+    {
+        get => combatNumber;
+        set => combatNumber= value;
+    }
    
 
     private void Start()
@@ -49,6 +64,8 @@ public class GameStateManager : MonoBehaviour
     public void OnEndTurnClick()
     {
         currentState.OnEndTurnClick();
+        numberOfRound++;
+        roundNumber.text = $"Turn : {numberOfRound}";
     }
 
     public void TransitionToState(RoundState nextState)
@@ -61,6 +78,7 @@ public class GameStateManager : MonoBehaviour
 public abstract class RoundStateBase
 {
     protected GameStateManager gameStateManager;
+   
     private int playerAction;
     public int PlayerAction
     {
@@ -98,8 +116,8 @@ public class PlayerTurnState : RoundStateBase
 
     public override void OnStateEnter()
     {
-        
-        PlayerAction = 2;
+        Cursor.visible = true;
+        PlayerAction = 20;
     }
 
     public override void UpdateState()
@@ -121,12 +139,14 @@ public class PlayerTurnState : RoundStateBase
 }
 public class OpponentTurnState : RoundStateBase
 {
-    public OpponentTurnState(GameStateManager gameStateManager) : base(gameStateManager) { }
+    public OpponentTurnState(GameStateManager gameStateManager) : base(gameStateManager)  { }
 
     public override void OnStateEnter()
     {
         Cursor.visible = false;
         Debug.Log("Opponnent Turn");
+        gameStateManager.opponentHands.FirstCombat();
+        
     }
 
     public override void UpdateState()

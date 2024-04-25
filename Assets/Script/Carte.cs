@@ -25,6 +25,7 @@ public class CarteData : IComparable<CarteData>
         this.enseigne = enseigne;
     }
 
+
     public int CompareTo(CarteData other)
     {
         return valeur.CompareTo(other.valeur);
@@ -33,12 +34,13 @@ public class CarteData : IComparable<CarteData>
 public class Carte : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private TMP_Text valeurText;
-
     [SerializeField] private TMP_Text enseigneText;
     [SerializeField] private TMP_Text heldText;
     [SerializeField] private Image cardBackg;
     [SerializeField] private GameObject targetPosition;
     [SerializeField] private AudioSource clicking;
+    public int cardValue;
+    public Enseigne CardEnseigne;
     public bool isHeld;
     private float delay = 2;
     private float timer;
@@ -62,6 +64,8 @@ public class Carte : MonoBehaviour, IPointerDownHandler
     internal void SetData(CarteData carteData)
     {
         string valeurString = carteData.valeur.ToString();
+        cardValue = carteData.valeur;
+        CardEnseigne = carteData.enseigne;
         string enseigneString = "";
         switch (carteData.valeur)
         {
@@ -103,6 +107,8 @@ public class Carte : MonoBehaviour, IPointerDownHandler
         enseigneText.text = enseigneString;
         valeurText.color = colorEnseigne;
     }
+
+   
 
     public void OnPointerDown(PointerEventData eventData)
     {

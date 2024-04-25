@@ -1,14 +1,16 @@
 
-bcsharpsquid:S3442G"9Change the visibility of this constructor to 'protected'.(ı«Î•üÿÿÿÿ8şùŸí1
-Mcsharpsquid:S3903")Move 'RoundState' into a named namespace.(äŒı8ğàæñì1
-Qcsharpsquid:S3903¨",Move 'ShoppingState' into a named namespace.(ğôì¦8€úŸí1
-Vcsharpsquid:S3903š",Move 'GameOverState' into a named namespace.(Õ”æİıÿÿÿÿ8ÿùŸí1
-Vcsharpsquid:S3903="-Move 'RoundStateBase' into a named namespace.(ÈÑêÒşÿÿÿÿ8ÿùŸí1
-Scsharpsquid:S3903‰".Move 'EndOfRoundState' into a named namespace.(òÃÿÊ8şùŸí1
-Tcsharpsquid:S3903z"0Move 'OpponentTurnState' into a named namespace.(¼£»ı8€úŸí1
-Wcsharpsquid:S3903\".Move 'PlayerTurnState' into a named namespace.(¼Ä¤£ùÿÿÿÿ8ÿùŸí1
-Scsharpsquid:S3903"/Move 'GameStateManager' into a named namespace.(éˆÇ8±¢æñì1
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(é¬”8ÙéÑŸí1
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(–İ‰ï8ä°ïñì1
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¿ıĞ…8“£ûí1
-mcsharpsquid:S2292A"DMake this an auto-implemented property and remove its backing field.(¼è¦ßúÿÿÿÿ8Ù„÷Ÿí1
+bcsharpsquid:S3442Y"9Change the visibility of this constructor to 'protected'.(ı«Î•üÿÿÿÿ8ïœÀñ1
+Mcsharpsquid:S3903")Move 'RoundState' into a named namespace.(äŒı8ïœÀñ1
+Vcsharpsquid:S3903®",Move 'GameOverState' into a named namespace.(Õ”æİıÿÿÿÿ8ğœÀñ1
+Scsharpsquid:S3903".Move 'EndOfRoundState' into a named namespace.(òÃÿÊ8ğœÀñ1
+Ucsharpsquid:S3903Œ"0Move 'OpponentTurnState' into a named namespace.(¼£»ı8ñœÀñ1
+Wcsharpsquid:S3903n".Move 'PlayerTurnState' into a named namespace.(¼Ä¤£ùÿÿÿÿ8ğœÀñ1
+Qcsharpsquid:S3903¼",Move 'ShoppingState' into a named namespace.(ğôì¦8ğœÀñ1
+Vcsharpsquid:S3903N"-Move 'RoundStateBase' into a named namespace.(ÈÑêÒşÿÿÿÿ8ïœÀñ1
+Scsharpsquid:S3903"/Move 'GameStateManager' into a named namespace.(éˆÇ8ïœÀñ1
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(é¥¨ÿ8ñœÀñ1
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(é¬”8ñœÀñ1
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(–İ‰ï8ñœÀñ1
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¿ıĞ…8ñœÀñ1
+mcsharpsquid:S2292S"DMake this an auto-implemented property and remove its backing field.(¼è¦ßúÿÿÿÿ8ñœÀñ1
+hcsharpsquid:S2292"DMake this an auto-implemented property and remove its backing field.(ïŠ 8ñœÀñ1
