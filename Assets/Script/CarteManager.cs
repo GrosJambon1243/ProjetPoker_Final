@@ -11,24 +11,6 @@ public class CarteManager : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < 4; i++)
-        {
-            for (int j = 1; j < 14; j++)
-            {
-                deck.Add(new CarteData(j,(Enseigne)i));
-            }
-        }
-
-        var temp = new List<CarteData>();
-
-        while (deck.Count > 0)
-        {
-            int indexRandom = Random.Range(0, deck.Count);
-            temp.Add(deck[indexRandom]);
-            deck.RemoveAt(indexRandom);
-        }
-
-        deck = temp;
         Piger();
     }
 
@@ -40,13 +22,37 @@ public class CarteManager : MonoBehaviour
             {
                 continue;
             }
+            Debug.Log("Hands");
             main[i].SetData(deck[indexCarte++]);
         }
-
         for (int i = 0; i < 5; i++)
         {
             main[i].ClearHeld();
         }
     }
+
+    public void CreateDeck()
+    {
+        deck.Clear();
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 1; j < 14; j++)
+            {
+                deck.Add(new CarteData(j,(Enseigne)i));
+            }
+        }
+        var temp = new List<CarteData>();
+
+        while (deck.Count > 0)
+        {
+            int indexRandom = Random.Range(0, deck.Count);
+            temp.Add(deck[indexRandom]);
+            deck.RemoveAt(indexRandom);
+        }
+
+        Debug.Log("Deck");
+        deck = temp;
+    }
+
     
 }

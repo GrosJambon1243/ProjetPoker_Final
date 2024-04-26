@@ -124,6 +124,12 @@ public class HandsCombo : MonoBehaviour
         return false;
     }
 
+    public bool hasRoyalFlush()
+    {
+        Array.Sort(playerHandsValue);
+        return playerHandsValue[0] == 1 && playerHandsValue[1] == 10 && playerHandsValue[2] == 11&&playerHandsValue[3] == 12&&playerHandsValue[4] == 13;
+    }
+
     public bool hasHouse()
     {
         if (threeOfAKind())
@@ -158,7 +164,16 @@ public class HandsCombo : MonoBehaviour
             playerHandsValue[i] = playerHands[i].cardValue;
         }
 
-        if (foorOfAKind())
+        if (hasFlush()&& hasRoyalFlush())
+        {
+            comboIndicator.text = "Royal Flush ! ";
+        }
+        else if (hasStraight() && hasFlush())
+        {
+            comboIndicator.text = "Straight Flush ! ";
+        }
+
+        else if (foorOfAKind())
         {
             comboIndicator.text = "Four of a Kind ! ";
         }

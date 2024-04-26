@@ -8,7 +8,7 @@ public class OpponentScript : MonoBehaviour
 {
     [SerializeField] public GameObject[] opponentHand;
     private Image[] imageComponents;
-    [SerializeField] private Sprite newCard;
+    
 
     private void Start()
     {
