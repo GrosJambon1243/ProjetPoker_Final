@@ -210,13 +210,11 @@ public class EndOfRoundState : RoundStateBase
         gameStateManager.playerGold += 5;
         gameStateManager.shopCanvas.enabled = true;
         Cursor.visible = true;
-        gameStateManager.goldAmount.text = gameStateManager.playerGold.ToString();
-
     }
 
     public override void UpdateState()
     {
-       
+        gameStateManager.goldAmount.text = gameStateManager.playerGold.ToString();
     }
 
     public override void OnNextBattleClick()
