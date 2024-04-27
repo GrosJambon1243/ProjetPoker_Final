@@ -8,6 +8,7 @@ public class OpponentScript : MonoBehaviour
 {
     [SerializeField] public GameObject[] opponentHand;
     private Image[] imageComponents;
+    [SerializeField] private List<Sprite> newCard; 
     
 
     private void Start()
@@ -17,12 +18,20 @@ public class OpponentScript : MonoBehaviour
         {
             imageComponents[i] = opponentHand[i].GetComponent<Image>();
         }
-
+       
     }
 
     public void FirstCombat()
     {
         opponentHand[0].GetComponent<Animator>().SetBool("Flip", true);
+
+    }
+
+    public void SecondCombat()
+    {
+        imageComponents[0].sprite = newCard[0];
+        imageComponents[2].sprite = newCard[1];
+        imageComponents[3].sprite = newCard[8];
 
     }
 }

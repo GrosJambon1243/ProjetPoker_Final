@@ -23,6 +23,7 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] public Button nextBattle;
     [SerializeField] private TMP_Text roundNumber;
     [SerializeField] public TMP_Text goldAmount;
+    [SerializeField] public TextScript roundText;
     private int numberOfRound = 1;
     [SerializeField] public Canvas shopCanvas;
     
@@ -69,7 +70,7 @@ public class GameStateManager : MonoBehaviour
     {
         currentState.OnEndTurnClick();
         numberOfRound++;
-        roundNumber.text = $"Turn : {numberOfRound}";
+        roundNumber.text = $"Let's Gamble!\nTurn : {numberOfRound}";
     }
 
     public void OnNextBattleClick()
@@ -133,17 +134,25 @@ public class PlayerTurnState : RoundStateBase
     // ReSharper disable Unity.PerformanceAnalysis
     public override void OnStateEnter()
     {
+        
         Debug.Log("Player Turn");
+        
+        gameStateManager.roundText.ResetAnim();
         gameStateManager.carteManager.CreateDeck();
         gameStateManager.carteManager.Piger();
         Cursor.visible = true;
         PlayerAction = 2;
         gameStateManager.shopCanvas.enabled = false;
+
+        if (gameStateManager.CombatNumber == 2)
+        {
+            gameStateManager.opponentHands.SecondCombat();
+        }
     }
 
     public override void UpdateState()
     {
-        
+        gameStateManager.roundText.StartOfRoundAnim();
     }
 
     public override void OnDrawClick()
@@ -168,7 +177,10 @@ public class OpponentTurnState : RoundStateBase
     {
         Cursor.visible = false;
         Debug.Log("Opponnent Turn");
-        gameStateManager.opponentHands.FirstCombat();
+        if (gameStateManager.CombatNumber == 1)
+        {
+            gameStateManager.opponentHands.FirstCombat();
+        }
         
 
     }
