@@ -17,3 +17,5 @@ W
 'Assets/Script/OpponentCard/FirstCard.cs,d\a\da54938e72202134198f02496498921d5269ad9a
 K
 Assets/Script/HandsCombo.cs,0\a\0af83db7eac6ca9b0c8b10464f66e6e994e3d056
+K
+Assets/Script/ItemScript.cs,7\7\7765dc25a4467c95a11e6cf123d3928caf05ed52

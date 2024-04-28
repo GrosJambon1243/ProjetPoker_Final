@@ -5,7 +5,7 @@ using UnityEngine;
   
 public class CarteManager : MonoBehaviour
 {
-    [SerializeField] private Carte[] main = new Carte[5];
+    [SerializeField] public Carte[] main = new Carte[5];
     private List<CarteData> deck = new List<CarteData>(52);
     private int indexCarte;
 

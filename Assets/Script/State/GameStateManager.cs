@@ -32,6 +32,7 @@ public class GameStateManager : MonoBehaviour
     public RoundStateBase[] allState = new RoundStateBase[5];
     private int combatNumber = 1;
     public int playerGold = 0;
+    public bool doubleGold;
     [SerializeField] private AudioSource clicking;
     private int playerAction;
     public int PlayerAction
@@ -145,6 +146,7 @@ public class PlayerTurnState : RoundStateBase
         Cursor.visible = true;
         gameStateManager.PlayerAction = 2;
         gameStateManager.shopCanvas.enabled = false;
+        gameStateManager.drawButton.enabled = true;
 
         if (gameStateManager.CombatNumber == 2)
         {
@@ -155,7 +157,6 @@ public class PlayerTurnState : RoundStateBase
     public override void UpdateState()
     {
         gameStateManager.roundText.StartOfRoundAnim();
-        Debug.Log(gameStateManager.PlayerAction);
     }
 
     public override void OnDrawClick()
@@ -210,7 +211,14 @@ public class EndOfRoundState : RoundStateBase
     public override void OnStateEnter()
     {
         Debug.Log("The Combat has ended");
-        gameStateManager.playerGold += 5;
+        if (gameStateManager.doubleGold)
+        {
+            gameStateManager.playerGold += 10;
+        }
+        else
+        {
+            gameStateManager.playerGold += 5;
+        }
         gameStateManager.shopCanvas.enabled = true;
         Cursor.visible = true;
     }

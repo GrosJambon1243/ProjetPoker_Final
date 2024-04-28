@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,11 +10,26 @@ public class ItemScript : MonoBehaviour
     [SerializeField] public GameStateManager gameStateManager;
     [SerializeField] private GameObject[] itemButton;
 
-
     public void UsingFirstItem()
     {
         gameStateManager.PlayerAction++;
         itemButton[0].SetActive(false);
 
+    }
+
+    public void UsingSecondItem()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (cartemanager.main[i].isHeld)
+            {
+                continue;
+            }
+            Debug.Log("Lol");
+            
+            cartemanager.main[i].SetData(new CarteData(1,Enseigne.Coeur));
+            break;
+        }
+        itemButton[1].SetActive(false);
     }
 }
