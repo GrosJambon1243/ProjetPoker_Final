@@ -240,6 +240,57 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5e6afe1dbed430408c3afbc6c9180cb, type: 3}
+--- !u!1 &22859888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 22859890}
+  - component: {fileID: 22859889}
+  m_Layer: 0
+  m_Name: ItemManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &22859889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22859888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1dccb0355789bd4ebeecf6ac94805bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cartemanager: {fileID: 394642958}
+  gameStateManager: {fileID: 2072821680}
+  itemButton:
+  - {fileID: 180490001}
+  - {fileID: 668967209}
+  - {fileID: 1714292722}
+  - {fileID: 1255901073}
+--- !u!4 &22859890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22859888}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1313.7678, y: 609.5997, z: -12.294505}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &48083399 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5549445997630287068, guid: 6593296c4fac281459db339c2740dd4f, type: 3}
@@ -5195,6 +5246,7 @@ MonoBehaviour:
   roundText: {fileID: 232112461}
   shopCanvas: {fileID: 464578103}
   playerGold: 0
+  clicking: {fileID: 408195392}
 --- !u!1001 &2077589407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5460,6 +5512,34 @@ PrefabInstance:
     - target: {fileID: 8416998156095144546, guid: a2e17d7ecb210104ba93509a4cbf57a4, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.27450982
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416998156095144546, guid: a2e17d7ecb210104ba93509a4cbf57a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416998156095144546, guid: a2e17d7ecb210104ba93509a4cbf57a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416998156095144546, guid: a2e17d7ecb210104ba93509a4cbf57a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 22859889}
+    - target: {fileID: 8416998156095144546, guid: a2e17d7ecb210104ba93509a4cbf57a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416998156095144546, guid: a2e17d7ecb210104ba93509a4cbf57a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UsingFirstItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416998156095144546, guid: a2e17d7ecb210104ba93509a4cbf57a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ItemScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416998156095144546, guid: a2e17d7ecb210104ba93509a4cbf57a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5761,3 +5841,4 @@ SceneRoots:
   - {fileID: 1666321910}
   - {fileID: 2072821679}
   - {fileID: 922199980}
+  - {fileID: 22859890}

@@ -21,7 +21,7 @@ public class GameStateManager : MonoBehaviour
     //Button and Text
     [SerializeField] public Button drawButton;
     [SerializeField] public Button nextBattle;
-    [SerializeField] private TMP_Text roundNumber;
+    [SerializeField] public TMP_Text roundNumber;
     [SerializeField] public TMP_Text goldAmount;
     [SerializeField] public TextScript roundText;
     private int numberOfRound = 1;
@@ -32,6 +32,13 @@ public class GameStateManager : MonoBehaviour
     public RoundStateBase[] allState = new RoundStateBase[5];
     private int combatNumber = 1;
     public int playerGold = 0;
+    [SerializeField] private AudioSource clicking;
+    private int playerAction;
+    public int PlayerAction
+    {
+        get => playerAction;
+        set => playerAction = value;
+    }
     public int CombatNumber
     {
         get => combatNumber;
@@ -59,7 +66,8 @@ public class GameStateManager : MonoBehaviour
     public void OnDrawCLick()
     {
         currentState.OnDrawClick();
-        if (currentState.PlayerAction == 0)
+        clicking.Play();
+        if (PlayerAction == 0)
         {
             drawButton.enabled = false;
         }
@@ -69,8 +77,9 @@ public class GameStateManager : MonoBehaviour
     public void OnEndTurnClick()
     {
         currentState.OnEndTurnClick();
+        clicking.Play();
         numberOfRound++;
-        roundNumber.text = $"Let's Gamble!\nTurn : {numberOfRound}";
+        roundNumber.text = $"Let's Gamble!\nPlayer Turn";
     }
 
     public void OnNextBattleClick()
@@ -89,13 +98,6 @@ public class GameStateManager : MonoBehaviour
 public abstract class RoundStateBase 
 {
     protected GameStateManager gameStateManager;
-   
-    private int playerAction;
-    public int PlayerAction
-    {
-        get => playerAction;
-        set => playerAction = value;
-    }
 
     public RoundStateBase(GameStateManager gameStateManager)
     {
@@ -136,12 +138,12 @@ public class PlayerTurnState : RoundStateBase
     {
         
         Debug.Log("Player Turn");
-        
+        gameStateManager.roundNumber.text = $"Let's Gamble!\nPlayer Turn";
         gameStateManager.roundText.ResetAnim();
         gameStateManager.carteManager.CreateDeck();
         gameStateManager.carteManager.Piger();
         Cursor.visible = true;
-        PlayerAction = 2;
+        gameStateManager.PlayerAction = 2;
         gameStateManager.shopCanvas.enabled = false;
 
         if (gameStateManager.CombatNumber == 2)
@@ -153,12 +155,13 @@ public class PlayerTurnState : RoundStateBase
     public override void UpdateState()
     {
         gameStateManager.roundText.StartOfRoundAnim();
+        Debug.Log(gameStateManager.PlayerAction);
     }
 
     public override void OnDrawClick()
     {
        Debug.Log("Drawing");
-       PlayerAction--;
+       gameStateManager.PlayerAction--;
        
     }
 
@@ -176,7 +179,7 @@ public class OpponentTurnState : RoundStateBase
     public override void OnStateEnter()
     {
         Cursor.visible = false;
-        Debug.Log("Opponnent Turn");
+       
         if (gameStateManager.CombatNumber == 1)
         {
             gameStateManager.opponentHands.FirstCombat();
@@ -188,7 +191,7 @@ public class OpponentTurnState : RoundStateBase
     public override void UpdateState()
     {
         timer += Time.deltaTime;
-        
+        gameStateManager.roundNumber.text = $"Let's Gamble!\nOpponent Turn";
         if (timer>=delay)
         {
             gameStateManager.TransitionToState(RoundState.EndOfRound);  
