@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public enum RoundState
@@ -24,8 +25,10 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] public TMP_Text roundNumber;
     [SerializeField] public TMP_Text goldAmount;
     [SerializeField] public TextScript roundText;
+    [SerializeField] public HandsCombo comboValue;
     private int numberOfRound = 1;
     [SerializeField] public Canvas shopCanvas;
+    [SerializeField] public GameObject calculText;
     
     //Other
     public RoundStateBase currentState;
@@ -138,7 +141,7 @@ public class PlayerTurnState : RoundStateBase
     public override void OnStateEnter()
     {
         
-        Debug.Log("Player Turn");
+      
         gameStateManager.roundNumber.text = $"Let's Gamble!\nPlayer Turn";
         gameStateManager.roundText.ResetAnim();
         gameStateManager.carteManager.CreateDeck();
@@ -174,17 +177,25 @@ public class PlayerTurnState : RoundStateBase
 public class OpponentTurnState : RoundStateBase
 {
     public OpponentTurnState(GameStateManager gameStateManager) : base(gameStateManager)  { }
-
+    private Scene scene = SceneManager.GetActiveScene();
     float timer = 0f;
-    float delay = 3f;
+    float delay = 8f;
     public override void OnStateEnter()
     {
+        timer = 0f;
         Cursor.visible = false;
        
         if (gameStateManager.CombatNumber == 1)
         {
             gameStateManager.opponentHands.FirstCombat();
         }
+        else if (gameStateManager.CombatNumber == 2)
+        {
+            gameStateManager.opponentHands.AnimSecondCombat();
+        }
+        gameStateManager.calculText.SetActive(true);
+        gameStateManager.calculText.GetComponent<CalculatingScript>().Coroutine();
+        
         
 
     }
@@ -192,9 +203,38 @@ public class OpponentTurnState : RoundStateBase
     public override void UpdateState()
     {
         timer += Time.deltaTime;
-        gameStateManager.roundNumber.text = $"Let's Gamble!\nOpponent Turn";
+        gameStateManager.roundNumber.text = $"Let's Gamble!\nHouse Turn";
+        if (timer>= 4)
+        {
+            switch (gameStateManager.CombatNumber)
+            {
+                case 1:
+                    if (gameStateManager.comboValue.comboValue >= 2)
+                    {
+                        Debug.Log("Player1");
+                    }
+                    else if (gameStateManager.comboValue.comboValue < 2)
+                    {
+                        Debug.Log("House1");
+                    }
+                    break;
+                case 2:
+                    if (gameStateManager.comboValue.comboValue >= 3)
+                    {
+                        Debug.Log("Player2");
+                    }
+                    else if (gameStateManager.comboValue.comboValue < 3)
+                    {
+                        Debug.Log("House2");
+                    }
+                    break;
+                  
+            }
+          
+        }
         if (timer>=delay)
         {
+            gameStateManager.calculText.SetActive(false);
             gameStateManager.TransitionToState(RoundState.EndOfRound);  
            
         }
@@ -210,7 +250,7 @@ public class EndOfRoundState : RoundStateBase
 
     public override void OnStateEnter()
     {
-        Debug.Log("The Combat has ended");
+        
         if (gameStateManager.doubleGold)
         {
             gameStateManager.playerGold += 10;

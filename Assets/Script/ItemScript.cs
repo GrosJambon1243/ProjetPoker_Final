@@ -32,4 +32,6 @@ public class ItemScript : MonoBehaviour
         }
         itemButton[1].SetActive(false);
     }
+    
+    
 }

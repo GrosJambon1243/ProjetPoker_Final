@@ -22,7 +22,7 @@ public class CarteManager : MonoBehaviour
             {
                 continue;
             }
-            Debug.Log("Hands");
+            
             main[i].SetData(deck[indexCarte++]);
         }
         for (int i = 0; i < 5; i++)
@@ -50,7 +50,7 @@ public class CarteManager : MonoBehaviour
             deck.RemoveAt(indexRandom);
         }
 
-        Debug.Log("Deck");
+        
         deck = temp;
     }
 

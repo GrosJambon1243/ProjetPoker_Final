@@ -19,3 +19,9 @@ K
 Assets/Script/HandsCombo.cs,0\a\0af83db7eac6ca9b0c8b10464f66e6e994e3d056
 K
 Assets/Script/ItemScript.cs,7\7\7765dc25a4467c95a11e6cf123d3928caf05ed52
+R
+"Assets/Script/CalculatingScript.cs,e\a\ea3de4585d7be36363aae44a7289050cf363a63e
+X
+(Assets/Script/OpponentCard/SecondCard.cs,0\3\037d8c855036047ee2d2d8bb36aa9b151dd03a9a
+W
+'Assets/Script/OpponentCard/ThirdCard.cs,a\b\abfb26f2672e628f8857c2878a1a54f5097fa62c

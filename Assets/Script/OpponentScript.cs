@@ -34,4 +34,10 @@ public class OpponentScript : MonoBehaviour
         imageComponents[3].sprite = newCard[8];
 
     }
+
+    public void AnimSecondCombat()
+    {
+        opponentHand[1].GetComponent<Animator>().SetBool("Flip", true);
+        opponentHand[2].GetComponent<Animator>().SetBool("Flip", true);
+    }
 }

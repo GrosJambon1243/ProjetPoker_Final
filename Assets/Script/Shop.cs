@@ -8,6 +8,7 @@ public class Shop : MonoBehaviour
    [SerializeField] public GameStateManager gameStateManager;
    [SerializeField] public Button[] itemBuyButtons;
    [SerializeField] public GameObject[] itemUseButtons;
+   [SerializeField] private AudioSource buyingSound;
 
    public void CloseShop()
    {
@@ -18,6 +19,7 @@ public class Shop : MonoBehaviour
    {
       if (gameStateManager.playerGold >= 5)
       {
+         buyingSound.Play();
          itemUseButtons[0].SetActive(true);
          gameStateManager.playerGold -= 5;
       }
@@ -26,6 +28,7 @@ public class Shop : MonoBehaviour
    {
       if (gameStateManager.playerGold >= 5)
       {
+         buyingSound.Play();
          itemUseButtons[1].SetActive(true);
          gameStateManager.playerGold -= 5;
       }
@@ -34,14 +37,17 @@ public class Shop : MonoBehaviour
    {
       if (gameStateManager.playerGold >= 5)
       {
+         buyingSound.Play();
          itemUseButtons[2].SetActive(true);
          gameStateManager.playerGold -= 5;
+         gameStateManager.doubleGold = true;
       }
    }
    public void BuyingFourthItem()
    {
       if (gameStateManager.playerGold >= 5)
       {
+         buyingSound.Play();
          itemUseButtons[3].SetActive(true);
          gameStateManager.playerGold -= 5;
       }

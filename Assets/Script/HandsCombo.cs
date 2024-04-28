@@ -8,6 +8,7 @@ public class HandsCombo : MonoBehaviour
 {
     [SerializeField]private TMP_Text comboIndicator;
     [SerializeField]private Carte[] playerHands;
+    public int comboValue = 0;
     private int firstCardPair;
     private int secCardPair;
     
@@ -17,6 +18,7 @@ public class HandsCombo : MonoBehaviour
     
     
     private int[] playerHandsValue = {1,2,3,4,5};
+    
 
     public bool hasPair()
     {
@@ -167,43 +169,53 @@ public class HandsCombo : MonoBehaviour
         if (hasFlush()&& hasRoyalFlush())
         {
             comboIndicator.text = "Royal Flush ! ";
+            comboValue = 10;
         }
         else if (hasStraight() && hasFlush())
         {
             comboIndicator.text = "Straight Flush ! ";
+            comboValue = 9;
         }
 
         else if (foorOfAKind())
         {
             comboIndicator.text = "Four of a Kind ! ";
+            comboValue = 8;
         }
         else if(hasHouse())
         {
             comboIndicator.text = "Full House ! ";
+            comboValue = 7;
         }
         else if (hasFlush())
         {
             comboIndicator.text = "Flush !";
+            comboValue = 6;
         }
         else if (hasStraight())
         {
             comboIndicator.text = "Straight !";
+            comboValue = 5;
         }
         else if (threeOfAKind())
         {  
             comboIndicator.text = "Three of a Kind !";
+            comboValue = 4;
         }
         else if(hasTwoPair())
         {
             comboIndicator.text = "Two Pair !";
+            comboValue = 3;
         }
         else if (hasPair())
         {
             comboIndicator.text = "Pair !";
+            comboValue = 2;
         }
         else
         {
             comboIndicator.text = "High Card !";
+            comboValue = 1;
         }
        
     }
