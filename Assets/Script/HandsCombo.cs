@@ -24,7 +24,7 @@ public class HandsCombo : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            for (int j = 1 +i; j < 5; j++)
+            for (int j = i +1; j < 5; j++)
             {
                 if (playerHands[i].cardValue == playerHands[j].cardValue)
                 {
@@ -72,7 +72,7 @@ public class HandsCombo : MonoBehaviour
                     if (playerHands[i].cardValue == playerHands[j].cardValue && playerHands[i].cardValue == playerHands[k].cardValue)
                     {
                         firstCardKind = i;
-                        secCardPair = j;
+                        secCardKind = j;
                         thirdCardKind = k;
                         return true;
                     }
@@ -134,22 +134,22 @@ public class HandsCombo : MonoBehaviour
 
     public bool hasHouse()
     {
-        if (threeOfAKind())
+        Array.Sort(playerHandsValue);
+        if (playerHandsValue[0] == playerHandsValue[1]  && playerHandsValue[0]  == playerHandsValue[2]  )
         {
-            for (int i = 0; i < 5; i++)
+            if (playerHandsValue[3]  == playerHandsValue[4] )
             {
-                for (int j = i + 1; j < 5; j++)
-                {
-                    
-                    if (playerHands[i].cardValue != playerHands[j].cardValue)
-                    {
-                        
-                        return true;
-                    }
-                }
+                return true;
             }
         }
-        
+
+        if (playerHandsValue[2]  == playerHandsValue[3]  && playerHandsValue[2]  == playerHandsValue[4] )
+        {
+            if (playerHandsValue[0]  == playerHandsValue[1] )
+            {
+                return true;
+            }
+        }
         return false;
     }
 

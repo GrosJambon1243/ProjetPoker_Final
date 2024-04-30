@@ -1,0 +1,15 @@
+
+ucsharpsquid:S3776ï"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(­–ð¯øÿÿÿÿ
+Kcsharpsquid:S3903	")Move 'Calculator' into a named namespace.(âÈ¤ÿúÿÿÿÿ
+>csharpsquid:S2933"!Make 'numbSimulation' 'readonly'.(°¯ãæ
+4csharpsquid:S2933"Make 'pile' 'readonly'.(èú’Ö
+fcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(Ùà¸åùÿÿÿÿ
+fcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(Ê€——úÿÿÿÿ
+fcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(õÑå¾øÿÿÿÿ
+fcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ãêåçúÿÿÿÿ
+fcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(‘¸Ýòüÿÿÿÿ
+acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(Æïó…
+fcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(×ÎÄÙúÿÿÿÿ
+Mcsharpsquid:S1066Í"/Merge this if statement with the enclosing one.(‹É‘†
+Mcsharpsquid:S1066Õ"/Merge this if statement with the enclosing one.(­Ê§Æ
+ucsharpsquid:S1450"SRemove the field 'hand' and declare it as a local variable in the relevant methods.(ÿ¯˜Óýÿÿÿÿ

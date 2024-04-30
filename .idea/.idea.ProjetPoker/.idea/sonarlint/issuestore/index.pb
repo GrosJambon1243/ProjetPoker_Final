@@ -2,8 +2,6 @@
 F
 Assets/Script/Carte.cs,3\3\334c24fadfc7a88fe84dd7ed142b7d12d4c38588
 K
-Assets/Script/Calculator.cs,b\3\b3d16f8163b64c88089590d56fc670e7cc6efc65
-K
 Assets/Script/TextScript.cs,7\e\7e950ee0a9f58ca7082646806d0b4a452ebb8855
 W
 'Assets/Script/State/GameStateManager.cs,c\e\cec1e0d6ca171e73b190d474380d1e34e34b3fef
@@ -25,3 +23,7 @@ X
 (Assets/Script/OpponentCard/SecondCard.cs,0\3\037d8c855036047ee2d2d8bb36aa9b151dd03a9a
 W
 'Assets/Script/OpponentCard/ThirdCard.cs,a\b\abfb26f2672e628f8857c2878a1a54f5097fa62c
+P
+ Assets/Script/Stat/Calculator.cs,0\6\06e2545e74b969d15fe68be71ee18ed02755bf27
+S
+#Assets/Script/Stat/ThirdQuestion.cs,9\0\90a0ff6788c0bed7acf362a972b746eeaeb8aa7e

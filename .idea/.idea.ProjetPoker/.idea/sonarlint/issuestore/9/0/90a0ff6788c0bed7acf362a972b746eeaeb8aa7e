@@ -1,0 +1,12 @@
+
+{csharpsquid:S3776a"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(„ ßøÿÿÿÿ8şÚµåò1
+wcsharpsquid:S3776×"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ëË‹Ê8Ö£²Şò1
+|csharpsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(­–ğ¯øÿÿÿÿ8‚ã¼Şò1
+Icsharpsquid:S3903",Move 'ThirdQuestion' into a named namespace.(Ø¹¹
+;csharpsquid:S2933"Make 'pile' 'readonly'.(èú’Ö8ø‘Şò1
+Ccsharpsquid:S2933"Make 'cardsPerHand' 'readonly'.(òø¼‡8òğ¿Şò1
+Jcsharpsquid:S2933"!Make 'numbSimulation' 'readonly'.(úü­÷ùÿÿÿÿ8şÃŞò1
+Tcsharpsquid:S1066ë"/Merge this if statement with the enclosing one.(‹É‘†8ƒã¼Şò1
+Tcsharpsquid:S1066ó"/Merge this if statement with the enclosing one.(­Ê§Æ8ƒã¼Şò1
+}csharpsquid:S1450"YRemove the field 'desireHand' and declare it as a local variable in the relevant methods.(×€äÒ8î¨ÁŞò1
+|csharpsquid:S1450"SRemove the field 'hand' and declare it as a local variable in the relevant methods.(œæÇ²ûÿÿÿÿ8ŠÑÃŞò1

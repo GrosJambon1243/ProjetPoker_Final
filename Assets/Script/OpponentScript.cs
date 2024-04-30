@@ -40,4 +40,24 @@ public class OpponentScript : MonoBehaviour
         opponentHand[1].GetComponent<Animator>().SetBool("Flip", true);
         opponentHand[2].GetComponent<Animator>().SetBool("Flip", true);
     }
+
+    public void ThirdCombat()
+    {
+        
+    }
+
+    public void AnimThirdCombat()
+    {
+        
+    }
+
+    public void FourthCombat()
+    {
+        
+    }
+
+    public void AnimFourthCombat()
+    {
+        
+    }
 }

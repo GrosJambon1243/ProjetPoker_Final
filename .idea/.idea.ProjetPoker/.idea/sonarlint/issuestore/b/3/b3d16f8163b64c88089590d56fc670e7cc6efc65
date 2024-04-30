@@ -1,5 +1,0 @@
-
-{csharpsquid:S3776
-"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(¢Í«½ÿÿÿÿÿ8å’Àñ1
-Rcsharpsquid:S3903")Move 'Calculator' into a named namespace.(âÈ¤ÿúÿÿÿÿ8æ’Àñ1
-?csharpsquid:S36262"Remove this redundant jump.(ÉŠ©ƒ8æ’Àñ1
