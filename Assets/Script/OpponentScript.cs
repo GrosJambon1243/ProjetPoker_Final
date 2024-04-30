@@ -29,9 +29,10 @@ public class OpponentScript : MonoBehaviour
 
     public void SecondCombat()
     {
-        imageComponents[0].sprite = newCard[0];
+        imageComponents[0].sprite = newCard[4];
         imageComponents[2].sprite = newCard[1];
         imageComponents[3].sprite = newCard[8];
+        imageComponents[4].sprite = newCard[2];
 
     }
 
@@ -43,12 +44,15 @@ public class OpponentScript : MonoBehaviour
 
     public void ThirdCombat()
     {
-        
+        imageComponents[0].sprite = newCard[12];
+        imageComponents[1].sprite = newCard[10];
+        imageComponents[2].sprite = newCard[7];
+        imageComponents[3].sprite = newCard[9];
     }
 
     public void AnimThirdCombat()
     {
-        
+        opponentHand[3].GetComponent<Animator>().SetBool("Flip", true);
     }
 
     public void FourthCombat()

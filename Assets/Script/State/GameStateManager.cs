@@ -200,20 +200,21 @@ public class OpponentTurnState : RoundStateBase
     {
         timer = 0f;
         Cursor.visible = false;
-       
-        if (gameStateManager.CombatNumber == 1)
+
+        switch (gameStateManager.CombatNumber)
         {
-            gameStateManager.opponentHands.FirstCombat();
-        }
-        else if (gameStateManager.CombatNumber == 2)
-        {
-            gameStateManager.opponentHands.AnimSecondCombat();
+            case 1:
+                gameStateManager.opponentHands.FirstCombat();
+                break;
+            case 2:
+                gameStateManager.opponentHands.AnimSecondCombat();
+                break;
+            case 3:
+                gameStateManager.opponentHands.AnimThirdCombat();
+                break;
         }
         gameStateManager.calculText.SetActive(true);
         gameStateManager.calculText.GetComponent<CalculatingScript>().Coroutine();
-        
-        
-
     }
 
     public override void UpdateState()
@@ -258,6 +259,20 @@ public class OpponentTurnState : RoundStateBase
                     }
                     break;
                 case 3:
+                    if (gameStateManager.comboValue.comboValue >= 4)
+                    {
+                        
+                        gameStateManager.calculText.SetActive(false);
+                        gameStateManager.winText.enabled = true;
+                        gameStateManager.winText.text = "Player Win !";
+                    }
+                    else if (gameStateManager.comboValue.comboValue < 4)
+                    {
+                        
+                        gameStateManager.winText.enabled = true;
+                        gameStateManager.winText.text = "House Win !";
+                        gameStateManager.calculText.SetActive(false);
+                    }
                     break;
                 case 4:
                     break;
