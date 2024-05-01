@@ -276,6 +276,7 @@ MonoBehaviour:
   - {fileID: 668967209}
   - {fileID: 1714292722}
   - {fileID: 1255901073}
+  remover: {fileID: 1204154063}
 --- !u!4 &22859890
 Transform:
   m_ObjectHideFlags: 0
@@ -2448,6 +2449,8 @@ GameObject:
   - component: {fileID: 690624738}
   - component: {fileID: 690624740}
   - component: {fileID: 690624739}
+  - component: {fileID: 690624742}
+  - component: {fileID: 690624741}
   m_Layer: 5
   m_Name: 'Fo_Card '
   m_TagString: Untagged
@@ -2512,6 +2515,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690624737}
   m_CullTransparentMesh: 1
+--- !u!114 &690624741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690624737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f42c917571a51014e9c7fd893a7067e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newCard: {fileID: 21300000, guid: cdd29579bcb072549b02f8042ce60c59, type: 3}
+--- !u!95 &690624742
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690624737}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 54f64a0e7a8457f438e5f3a46629c502, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &699740476
 GameObject:
   m_ObjectHideFlags: 0
@@ -2819,7 +2856,7 @@ RectTransform:
   m_GameObject: {fileID: 738900503}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1006775553}
@@ -2874,21 +2911,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 394642958}
-        m_TargetAssemblyTypeName: CarteManager, Assembly-CSharp
-        m_MethodName: Piger
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2072821680}
-        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
-        m_MethodName: OnDrawCLick
+      - m_Target: {fileID: 1204154067}
+        m_TargetAssemblyTypeName: DeckRemover, Assembly-CSharp
+        m_MethodName: RemoveButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4081,7 +4106,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4228,7 +4253,7 @@ RectTransform:
   m_GameObject: {fileID: 1050686101}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1063835856}
@@ -4524,7 +4549,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4827,13 +4852,14 @@ GameObject:
   - component: {fileID: 1204154064}
   - component: {fileID: 1204154066}
   - component: {fileID: 1204154065}
+  - component: {fileID: 1204154067}
   m_Layer: 5
   m_Name: Remove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1204154064
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4952,6 +4978,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204154063}
   m_CullTransparentMesh: 1
+--- !u!114 &1204154067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204154063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231fc901fe34f4e408e9441edbda9dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deck: {fileID: 394642958}
+  carteToRemove: {fileID: 1063835857}
 --- !u!1 &1219050515
 GameObject:
   m_ObjectHideFlags: 0
@@ -6027,6 +6067,34 @@ PrefabInstance:
     - target: {fileID: 8416998156095144546, guid: a2e17d7ecb210104ba93509a4cbf57a4, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.27450982
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416998156095144546, guid: a2e17d7ecb210104ba93509a4cbf57a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416998156095144546, guid: a2e17d7ecb210104ba93509a4cbf57a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416998156095144546, guid: a2e17d7ecb210104ba93509a4cbf57a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 22859889}
+    - target: {fileID: 8416998156095144546, guid: a2e17d7ecb210104ba93509a4cbf57a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416998156095144546, guid: a2e17d7ecb210104ba93509a4cbf57a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UsingThirdItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416998156095144546, guid: a2e17d7ecb210104ba93509a4cbf57a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ItemScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416998156095144546, guid: a2e17d7ecb210104ba93509a4cbf57a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7308,7 +7376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7808252031991778555, guid: 6593296c4fac281459db339c2740dd4f, type: 3}
       propertyPath: m_text
-      value: Last Resort
+      value: Remover
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7709,6 +7777,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2191f76b7c627b4788139cca6d59a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCanvas: {fileID: 1800228100}
+  winningCanvas: {fileID: 1301239015}
   opponentHands: {fileID: 1898923085}
   carteManager: {fileID: 394642958}
   drawButton: {fileID: 708696184}

@@ -27,3 +27,7 @@ P
  Assets/Script/Stat/Calculator.cs,0\6\06e2545e74b969d15fe68be71ee18ed02755bf27
 S
 #Assets/Script/Stat/ThirdQuestion.cs,9\0\90a0ff6788c0bed7acf362a972b746eeaeb8aa7e
+W
+'Assets/Script/OpponentCard/FifthCard.cs,8\8\88e9c3c77500ec8505133b756ad056e177ffd257
+L
+Assets/Script/DeckRemover.cs,3\f\3f407f90e20bf0a10e5c61fe82d86816fdb7a702

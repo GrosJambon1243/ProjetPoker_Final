@@ -9,6 +9,7 @@ public class ItemScript : MonoBehaviour
     [SerializeField] public CarteManager cartemanager;
     [SerializeField] public GameStateManager gameStateManager;
     [SerializeField] private GameObject[] itemButton;
+    [SerializeField] private GameObject remover;
 
     public void UsingFirstItem()
     {
@@ -32,6 +33,12 @@ public class ItemScript : MonoBehaviour
         }
         itemButton[1].SetActive(false);
     }
-    
+
+    public void UsingThirdItem()
+    {
+        remover.SetActive(true);
+        
+        itemButton[3].SetActive(false);
+    }
     
 }

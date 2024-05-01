@@ -57,11 +57,15 @@ public class OpponentScript : MonoBehaviour
 
     public void FourthCombat()
     {
-        
+        imageComponents[0].sprite = newCard[0];
+        imageComponents[1].sprite = newCard[1];
+        imageComponents[2].sprite = newCard[4];
+        imageComponents[3].sprite = newCard[12];
+        imageComponents[4].sprite = newCard[5];
     }
 
     public void AnimFourthCombat()
     {
-        
+        opponentHand[4].GetComponent<Animator>().SetBool("Flip", true);
     }
 }

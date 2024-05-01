@@ -15,6 +15,10 @@ public enum RoundState
 }
 public class GameStateManager : MonoBehaviour
 {
+    //Canvas
+    [SerializeField] public GameObject currentCanvas;
+    [SerializeField] public GameObject winningCanvas;
+    
     //Opponent Hand and Sprite
     [SerializeField] public OpponentScript opponentHands;
     [SerializeField] public CarteManager carteManager;
@@ -111,7 +115,7 @@ public abstract class RoundStateBase
     }
     public virtual void OnDrawClick()
     {
-        Debug.Log("Cannot Draw");
+       
     }
 
     public virtual void OnEndTurnClick()
@@ -148,7 +152,7 @@ public class PlayerTurnState : RoundStateBase
         gameStateManager.carteManager.CreateDeck();
         gameStateManager.carteManager.Piger();
         Cursor.visible = true;
-        gameStateManager.PlayerAction = 2;
+        gameStateManager.PlayerAction = 3;
         gameStateManager.shopCanvas.enabled = false;
         gameStateManager.drawButton.enabled = true;
 
@@ -167,10 +171,7 @@ public class PlayerTurnState : RoundStateBase
             gameStateManager.opponentHands.FourthCombat();
         }
 
-        if (gameStateManager.CombatNumber == 5)
-        {
-            
-        }
+       
     }
 
     public override void UpdateState()
@@ -180,9 +181,7 @@ public class PlayerTurnState : RoundStateBase
 
     public override void OnDrawClick()
     {
-       Debug.Log("Drawing");
        gameStateManager.PlayerAction--;
-       
     }
 
     public override void OnEndTurnClick()
@@ -193,9 +192,11 @@ public class PlayerTurnState : RoundStateBase
 public class OpponentTurnState : RoundStateBase
 {
     public OpponentTurnState(GameStateManager gameStateManager) : base(gameStateManager)  { }
-    
+    private Scene currentScene = SceneManager.GetActiveScene();
+    private bool houseWin = false;
+   
     float timer = 0f;
-    float delay = 8f;
+    float delay = 7f;
     public override void OnStateEnter()
     {
         timer = 0f;
@@ -211,6 +212,9 @@ public class OpponentTurnState : RoundStateBase
                 break;
             case 3:
                 gameStateManager.opponentHands.AnimThirdCombat();
+                break;
+            case 4:
+                gameStateManager.opponentHands.AnimFourthCombat();
                 break;
         }
         gameStateManager.calculText.SetActive(true);
@@ -228,53 +232,68 @@ public class OpponentTurnState : RoundStateBase
                 case 1:
                     if (gameStateManager.comboValue.comboValue >= 2)
                     {
-                        
                         gameStateManager.winText.enabled = true;
                         gameStateManager.winText.text = "Player Win !";
                         gameStateManager.calculText.SetActive(false);
                     }
                     else if (gameStateManager.comboValue.comboValue < 2)
                     {
-                        
                         gameStateManager.winText.enabled = true;
                         gameStateManager.winText.text = "House Win !";
                         gameStateManager.calculText.SetActive(false);
-                        
+                        houseWin = true;
                     }
                     break;
                 case 2:
                     if (gameStateManager.comboValue.comboValue >= 3)
                     {
-                        
                         gameStateManager.calculText.SetActive(false);
                         gameStateManager.winText.enabled = true;
                         gameStateManager.winText.text = "Player Win !";
                     }
                     else if (gameStateManager.comboValue.comboValue < 3)
                     {
-                        
                         gameStateManager.winText.enabled = true;
                         gameStateManager.winText.text = "House Win !";
                         gameStateManager.calculText.SetActive(false);
+                        houseWin = true;
+
                     }
                     break;
                 case 3:
                     if (gameStateManager.comboValue.comboValue >= 4)
                     {
-                        
                         gameStateManager.calculText.SetActive(false);
                         gameStateManager.winText.enabled = true;
                         gameStateManager.winText.text = "Player Win !";
                     }
                     else if (gameStateManager.comboValue.comboValue < 4)
                     {
-                        
                         gameStateManager.winText.enabled = true;
                         gameStateManager.winText.text = "House Win !";
                         gameStateManager.calculText.SetActive(false);
+                        houseWin = true;
+
                     }
                     break;
                 case 4:
+                    if (gameStateManager.comboValue.comboValue >= 4)
+                    {
+                        gameStateManager.calculText.SetActive(false);
+                        gameStateManager.winText.enabled = true;
+                        gameStateManager.winText.text = "Player Win !";
+                        gameStateManager.currentCanvas.SetActive(false);
+                        gameStateManager.winningCanvas.SetActive(true);
+                        gameStateManager.gameObject.SetActive(false);
+                    }
+                    else if (gameStateManager.comboValue.comboValue < 4)
+                    {
+                        gameStateManager.winText.enabled = true;
+                        gameStateManager.winText.text = "House Win !";
+                        gameStateManager.calculText.SetActive(false);
+                        houseWin = true;
+
+                    }
                     break;
                   
             }
@@ -282,8 +301,15 @@ public class OpponentTurnState : RoundStateBase
         }
         if (timer>=delay)
         {
-            gameStateManager.TransitionToState(RoundState.EndOfRound);  
-            gameStateManager.winText.enabled = false;
+            if (houseWin)
+            {
+                SceneManager.LoadScene(currentScene.name);
+            }
+            else
+            {
+                gameStateManager.TransitionToState(RoundState.EndOfRound);  
+                gameStateManager.winText.enabled = false;
+            }
         }
        
     }
@@ -300,11 +326,11 @@ public class EndOfRoundState : RoundStateBase
         
         if (gameStateManager.doubleGold)
         {
-            gameStateManager.playerGold += 10;
+            gameStateManager.playerGold += 20;
         }
         else
         {
-            gameStateManager.playerGold += 5;
+            gameStateManager.playerGold += 10;
         }
         gameStateManager.shopCanvas.enabled = true;
         Cursor.visible = true;
