@@ -15,10 +15,10 @@
 
 <h3>What I've done in this project</h3>
 <ol>
-  <li>Implementing and using a state machine pattern to control the multiple phases of gameplay</li>
-  <li>Verifying what poker hand is being play and if it's better then the opponent's</li>
+  <li>Implemented and used a state machine pattern to control the multiple phases of gameplay</li>
+  <li>Verifying what poker hand is being played and if it's better than the opponent's</li>
   <li>Creating a shop for the player to spend their currency</li>
-  <li>Designing usable item that can be used during gameplay</li>
+  <li>Designed usable items that can be used during gameplay</li>
    
   
 </ol>
